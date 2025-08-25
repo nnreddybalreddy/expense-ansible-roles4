@@ -1,6 +1,6 @@
   - name: run app pre-requisites
     ansible.builtin.import_role:
-      name: common
+      name: common 
       vars_from: vars/main.yaml
 
   - name: dnf module disable nodejs -y
