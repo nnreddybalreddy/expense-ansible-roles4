@@ -51,6 +51,9 @@
       executable: pip3.9 # pip3.11 if python version is 3.11
 
   - name: import data into mysql
+    ansible.builtin.import_role:
+      name: common
+      vars_from: vars/main.yaml    
     community.mysql.mysql_db:
       login_user: "{{login_user}}"
       login_password: "{{ mysql_root_password }}"
