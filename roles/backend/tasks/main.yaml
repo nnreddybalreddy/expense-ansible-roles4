@@ -1,7 +1,7 @@
-  # - name: run app pre-requisites
-  #   ansible.builtin.import_role:
-  #     name: common
-  #     vars_from: vars/main.yaml
+  - name: run app pre-requisites
+    ansible.builtin.import_role:
+      name: common
+      vars_from: vars/main.yaml
 
   - name: dnf module disable nodejs -y
     ansible.builtin.command: dnf module disable nodejs -y
@@ -36,7 +36,7 @@
     ansible.builtin.import_role:
       name: common
       tasks_from: app-pre-req.yaml
-      vars_from: vars/main.yaml 
+
 
   - name: npm install      
     ansible.builtin.command: npm install
